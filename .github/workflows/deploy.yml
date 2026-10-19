@@ -16,10 +16,10 @@ jobs:
 
       - uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 22
 
       - name: Install Worker deps
-        run: npm install
+        run: npm ci
         working-directory: worker
 
       - name: Apply D1 migrations
@@ -41,7 +41,7 @@ jobs:
       - name: Install + build frontend
         working-directory: frontend
         run: |
-          npm install
+          npm ci
           npm run build
         env:
           NEXT_PUBLIC_API_URL: ${{ vars.WORKER_URL }}
