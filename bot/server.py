@@ -18,6 +18,7 @@ app = FastAPI(title="Vaami Pipecat bot")
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[o.strip() for o in os.getenv("CORS_ORIGINS", "http://localhost:3000").split(",")],
+    allow_origin_regex=r"https://([a-z0-9-]+\.)?call-log-9z1\.pages\.dev",
     allow_methods=["*"],
     allow_headers=["*"],
 )
