@@ -1,0 +1,18 @@
+name = "call-log-worker"
+main = "src/index.ts"
+compatibility_date = "2025-01-01"
+
+# Turns on Workers Logs + metrics in the Cloudflare dashboard
+[observability]
+enabled = true
+
+[vars]
+# Set to your Pages URL after the first deploy (e.g. https://call-log.pages.dev). "*" is fine for the demo.
+ALLOWED_ORIGIN = "*"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "call-log-db"
+# Paste the id printed by: npx wrangler d1 create call-log-db
+database_id = "f40f00f5-76e4-4405-bd7b-f4895c187378"
+migrations_dir = "migrations"
