@@ -41,4 +41,4 @@ jobs:
 
       - name: Deploy Pages
         working-directory: frontend
-        run: npx --yes wrangler@4 pages deploy out --project-name=${{ vars.PAGES_PROJECT }} --branch=main
+        run: npx --yes wrangler@4 pages deploy out --project-name=${{ vars.PAGES_PROJECT || 'call-log' }} --branch=main
