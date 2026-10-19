@@ -1,5 +1,5 @@
-export const API_URL = process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:8787";
-export const BOT_URL = process.env.NEXT_PUBLIC_BOT_URL ?? "http://localhost:7860";
+export const API_URL = (process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:8787").replace(/\/+$/, "");
+export const BOT_URL = (process.env.NEXT_PUBLIC_BOT_URL ?? "http://localhost:7860").replace(/\/+$/, "");
 
 export interface CallSummary {
   id: string;
